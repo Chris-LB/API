@@ -1,12 +1,11 @@
-//import org.json.simple.JSONArray;
-//import org.json.simple.JSONObject;
-//import org.json.simple.parser.JSONParser;
-
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Scanner;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Main {
 
@@ -67,8 +66,8 @@ public class Main {
 				// remove BOM
 //				byte[] responseStringBytes = responseString.getBytes();
 //				responseString = new String(responseStringBytes, "UTF-8");
-//				ObjectMapper mapper = new ObjectMapper();
-//				Map<String, Object> map = mapper.readValue(json, Map.class);
+				ObjectMapper mapper = new ObjectMapper();
+				Map<String, Object> map = mapper.readValue(responseString.toString(), Map.class);
 
 				System.out.println(responseString);
 //
